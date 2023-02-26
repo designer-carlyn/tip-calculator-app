@@ -1,0 +1,28 @@
+@forward "../helpers/variables.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Space Mono", monospace;
+  background: var(--l-grayish-cyan);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+}
+
+.MuiButtonBase-root {
+  font-family: "Space Mono", monospace !important;
+}
+
+.MuiInputBase-root {
+  font-family: "Space Mono", monospace !important;
+}

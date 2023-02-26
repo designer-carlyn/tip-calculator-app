@@ -1,0 +1,138 @@
+@forward "../helpers/variables.scss";
+
+.tip-calculator {
+  &__header {
+    letter-spacing: 6px;
+    color: var(--dark-grayish-cyan);
+    margin-bottom: 50px;
+    text-align: center;
+  }
+
+  &__card {
+    .MuiCard-root {
+      border-radius: 15px;
+    }
+
+    .MuiCardContent-root {
+      min-width: 800px;
+      padding: 20px;
+    }
+  }
+
+  &__computation {
+    padding: 20px;
+
+    &-item {
+      margin-bottom: 30px;
+
+      .item-label {
+        font-weight: 700;
+        color: var(--dark-grayish-cyan);
+        font-size: 16px;
+        margin-bottom: 5px;
+      }
+
+      .MuiInputBase-root {
+        font-size: 20px;
+        background-color: var(--vl-grayish-cyan);
+        border: 0;
+        font-weight: 700;
+        color: var(--dark-grayish-cyan);
+
+        .MuiInputBase-input {
+          text-align: right;
+          padding: 10px;
+        }
+
+        fieldset {
+          border-color: rgba(0,0,0,0.1);
+        }
+
+        &:hover {
+          fieldset {
+            border-color: var(--c-cyan);
+          }
+        }
+      }
+
+      .item-tip-button {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        grid-gap: 10px;
+
+        .MuiButtonBase-root {
+          background-color: var(--v-dark-cyan);
+          color: var(--c-white);
+          font-size: 20px;
+          font-weight: 700;
+        }
+
+        .MuiInputBase-input {
+          text-align: center;
+        }
+      }
+
+      &.tip-calculator__computation--people {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__result {
+    background: var(--v-dark-cyan);
+    color: var(--c-white);
+    border-radius: 15px;
+    padding: 35px 30px 25px;
+    min-height: 330px;
+    display: flex;
+
+    &-tip {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+
+      .tip-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 25px;
+
+        .tip-title {
+          h4 {
+            font-size: 14px;
+          }
+
+          small {
+            color: var(--grayish-cyan);
+            font-weight: 700;
+          }
+        }
+
+        .tip-amount {
+          margin-left: auto;
+          color: var(--c-cyan);
+          display: flex;
+          align-items: center;
+
+          .MuiSvgIcon-root {
+            font-size: 35px;
+          }
+
+          h1 {
+            font-size: 35px;
+          }
+        }
+      }
+
+      .tip-reset {
+        margin-top: auto;
+
+        .MuiButtonBase-root {
+          font-size: 20px;
+          font-weight: 700;
+          background-color: var(--c-cyan);
+          color: var(--v-dark-cyan);
+        }
+      }
+    }
+  }
+}

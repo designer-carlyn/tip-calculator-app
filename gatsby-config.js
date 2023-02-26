@@ -4,7 +4,7 @@
 module.exports = {
   siteMetadata: {
     title: `Tip Calculator App`,
-    siteUrl: `https://www.yourdomain.tld`
+    siteUrl: `https://www.yourdomain.tld`,
   },
-  plugins: ["gatsby-plugin-sass"]
+  plugins: ["gatsby-plugin-sass"],
 };
