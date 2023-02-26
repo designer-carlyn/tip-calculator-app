@@ -8,7 +8,7 @@ import PersonIcon from "@mui/icons-material/Person";
 const BillComputation = ({
   totalBill,
   numberOfPeople,
-  customTip,
+  propsTipPercentage,
   propsChooseTip,
 }) => {
   const percentageTip = ["5", "10", "15", "25", "50"];
@@ -55,7 +55,7 @@ const BillComputation = ({
             );
           })}
           <TextField
-            onChange={customTip}
+            onChange={propsTipPercentage}
             id="bill-amount"
             type="number"
             placeholder="CUSTOM"

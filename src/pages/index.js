@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Card, CardContent, Grid } from "@mui/material";
 
 /* Import Components */
@@ -13,8 +13,14 @@ import "../scss/components/tip-calculator.scss";
 
 const IndexPage = () => {
   const [totalBill, setTotalBill] = useState(0);
-  const [customTip, setcustomTip] = useState(0);
-  const [numberOfPeople, setTonumberOfPeople] = useState(0);
+  const [tipPercentage, setTipPercentage] = useState(0);
+  // const [numberOfPeople, setTonumberOfPeople] = useState(0);
+  const [tipAmount, setTipAmount] = useState(0);
+  // const [total, setTotal] = useState(0);
+
+  let getTotaTipPercentage = Math.round((totalBill / 100) * tipPercentage);
+
+  console.log(getTotaTipPercentage);
 
   function onChangeTotalBill(event) {
     let value = event.target.value;
@@ -22,17 +28,20 @@ const IndexPage = () => {
   }
 
   function onClickPropsChooseTip(value) {
-    setcustomTip(value);
+    setTipPercentage(value);
+    setTipAmount(getTotaTipPercentage);
+    console.log(value);
   }
 
-  function onChagecustomTip(event) {
+  const onChangeTipPercentage = (event) => {
     let value = event.target.value;
-    setcustomTip(value);
-  }
+    setTipPercentage(value);
+    setTipAmount(getTotaTipPercentage);
+  };
 
   function onChagenumberOfPeople(event) {
     let value = event.target.value;
-    setTonumberOfPeople(value);
+    setTipPercentage(value);
   }
 
   return (
@@ -50,12 +59,12 @@ const IndexPage = () => {
                 <BillComputation
                   totalBill={onChangeTotalBill}
                   propsChooseTip={onClickPropsChooseTip}
-                  customTip={onChagecustomTip}
+                  propsTipPercentage={onChangeTipPercentage}
                   numberOfPeople={onChagenumberOfPeople}
                 ></BillComputation>
               </Grid>
               <Grid item md={6} sm={6} xs={12}>
-                <BillResult></BillResult>
+                <BillResult tipAmountPerson={tipAmount}></BillResult>
               </Grid>
             </Grid>
           </CardContent>
