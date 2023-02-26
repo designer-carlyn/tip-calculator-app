@@ -48,6 +48,7 @@ const BillComputation = ({
                 variant="contained"
                 disableElevation
                 key={index}
+                id={index}
                 onClick={(event) => chooseTip(event, index, tip)}
               >
                 {tip}%
@@ -60,6 +61,7 @@ const BillComputation = ({
             type="number"
             placeholder="CUSTOM"
             fullWidth
+            InputProps={{ inputProps: { min: 0 } }}
           />
         </div>
       </div>
@@ -79,6 +81,7 @@ const BillComputation = ({
                 <PersonIcon />
               </InputAdornment>
             ),
+            inputProps: { min: 0 },
           }}
         />
       </div>
