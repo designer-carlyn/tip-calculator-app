@@ -5,8 +5,17 @@ import { TextField, InputAdornment, Button } from "@mui/material";
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 import PersonIcon from "@mui/icons-material/Person";
 
-const BillComputation = () => {
-  const percentageTip = [5, 10, 15, 25, 50];
+const BillComputation = ({
+  totalBill,
+  numberOfPeople,
+  customTip,
+  propsChooseTip,
+}) => {
+  const percentageTip = ["5", "10", "15", "25", "50"];
+
+  const chooseTip = (event, index, value) => {
+    propsChooseTip(value);
+  };
 
   return (
     <div className="tip-calculator__computation">
@@ -14,6 +23,7 @@ const BillComputation = () => {
       <div className="tip-calculator__computation-item tip-calculator__computation--bill">
         <div className="item-label">Bill</div>
         <TextField
+          onChange={totalBill}
           id="bill-amount"
           type="number"
           fullWidth
@@ -32,14 +42,20 @@ const BillComputation = () => {
       <div className="tip-calculator__computation-item tip-calculator__computation--tip">
         <div className="item-label">Select Tip %</div>
         <div className="item-tip-button">
-          {percentageTip.map((tip) => {
+          {percentageTip.map((tip, index) => {
             return (
-              <Button variant="contained" disableElevation>
+              <Button
+                variant="contained"
+                disableElevation
+                key={index}
+                onClick={(event) => chooseTip(event, index, tip)}
+              >
                 {tip}%
               </Button>
             );
           })}
           <TextField
+            onChange={customTip}
             id="bill-amount"
             type="number"
             placeholder="CUSTOM"
@@ -53,6 +69,7 @@ const BillComputation = () => {
       <div className="tip-calculator__computation-item tip-calculator__computation--people">
         <div className="item-label">Number of People</div>
         <TextField
+          onChange={numberOfPeople}
           id="number-people"
           type="number"
           fullWidth
