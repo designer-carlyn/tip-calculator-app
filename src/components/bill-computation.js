@@ -24,9 +24,9 @@ const BillComputation = ({
         <div className="item-label">Bill</div>
         <TextField
           onChange={totalBill}
-          id="bill-amount"
           type="number"
           fullWidth
+          placeholder="0.00"
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
@@ -70,9 +70,9 @@ const BillComputation = ({
         <div className="item-label">Number of People</div>
         <TextField
           onChange={numberOfPeople}
-          id="number-people"
           type="number"
           fullWidth
+          placeholder="0"
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">

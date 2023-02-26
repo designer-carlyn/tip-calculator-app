@@ -47,7 +47,7 @@ const IndexPage = () => {
     setTipAmount((getTotaTipPercentage / numberOfPeople).toFixed(2));
 
     const getTotalBillPerPerson = totalBill / numberOfPeople + +tipAmount;
-    setTotal(getTotalBillPerPerson);
+    setTotal(getTotalBillPerPerson.toFixed(2));
   }, [totalBill, tipAmount, tipPercentage, numberOfPeople]);
 
   return (
