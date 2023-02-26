@@ -13,36 +13,42 @@ import "../scss/components/tip-calculator.scss";
 
 const IndexPage = () => {
   const [totalBill, setTotalBill] = useState(0);
-  const [tipPercentage, setTipPercentage] = useState(0);
-  // const [numberOfPeople, setTonumberOfPeople] = useState(0);
-  const [tipAmount, setTipAmount] = useState(0);
-  // const [total, setTotal] = useState(0);
+  const [tipPercentage, setTipPercentage] = useState("");
+  const [numberOfPeople, setNumberOfPeople] = useState(0);
+  const [tipAmount, setTipAmount] = useState("0.00");
+  const [total, setTotal] = useState(0);
 
-  let getTotaTipPercentage = Math.round((totalBill / 100) * tipPercentage);
-
-  console.log(getTotaTipPercentage);
-
-  function onChangeTotalBill(event) {
-    let value = event.target.value;
+  const onChangeTotalBill = (event) => {
+    const value = event.target.value;
     setTotalBill(value);
-  }
-
-  function onClickPropsChooseTip(value) {
-    setTipPercentage(value);
-    setTipAmount(getTotaTipPercentage);
-    console.log(value);
-  }
-
-  const onChangeTipPercentage = (event) => {
-    let value = event.target.value;
-    setTipPercentage(value);
-    setTipAmount(getTotaTipPercentage);
   };
 
-  function onChagenumberOfPeople(event) {
-    let value = event.target.value;
-    setTipPercentage(value);
+  const onClickPropsChooseTip = (value) => {
+    setTipPercentage(value / 100);
+  };
+
+  const onChangeTipPercentage = (event) => {
+    const value = event.target.value;
+    setTipPercentage(value / 100);
+  };
+
+  function onChangeNumberOfPeople(event) {
+    const value = event.target.value;
+    setNumberOfPeople(value);
   }
+
+  if (!isFinite(tipAmount) || isNaN(tipAmount)) {
+    setTipAmount("0.00");
+    setTotal("0.00");
+  }
+
+  useEffect(() => {
+    const getTotaTipPercentage = (totalBill * tipPercentage).toFixed(2);
+    setTipAmount((getTotaTipPercentage / numberOfPeople).toFixed(2));
+
+    const getTotalBillPerPerson = totalBill / numberOfPeople + +tipAmount;
+    setTotal(getTotalBillPerPerson);
+  }, [totalBill, tipAmount, tipPercentage, numberOfPeople]);
 
   return (
     <main className="tip-calculator">
@@ -60,11 +66,14 @@ const IndexPage = () => {
                   totalBill={onChangeTotalBill}
                   propsChooseTip={onClickPropsChooseTip}
                   propsTipPercentage={onChangeTipPercentage}
-                  numberOfPeople={onChagenumberOfPeople}
+                  numberOfPeople={onChangeNumberOfPeople}
                 ></BillComputation>
               </Grid>
               <Grid item md={6} sm={6} xs={12}>
-                <BillResult tipAmountPerson={tipAmount}></BillResult>
+                <BillResult
+                  tipAmountPerson={tipAmount}
+                  totalBillPerPerson={total}
+                ></BillResult>
               </Grid>
             </Grid>
           </CardContent>

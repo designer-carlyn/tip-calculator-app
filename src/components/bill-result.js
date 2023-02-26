@@ -3,7 +3,7 @@ import React from "react";
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 import { Button } from "@mui/material";
 
-const BillResult = ({ tipAmountPerson }) => {
+const BillResult = ({ tipAmountPerson, totalBillPerPerson }) => {
   return (
     <div className="tip-calculator__result">
       <div className="tip-calculator__result-tip">
@@ -24,7 +24,7 @@ const BillResult = ({ tipAmountPerson }) => {
           </div>
           <div className="tip-amount">
             <AttachMoneyIcon></AttachMoneyIcon>
-            <h1>32.79</h1>
+            <h1>{totalBillPerPerson}</h1>
           </div>
         </div>
         <div className="tip-reset">
