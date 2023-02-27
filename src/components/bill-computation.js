@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import {
   TextField,
   InputAdornment,
-  // Button,
   RadioGroup,
   Radio,
   FormControlLabel,
@@ -20,10 +19,20 @@ const BillComputation = ({
 }) => {
   const [value, setValue] = useState("");
 
+  const getAllRadioButton = document.querySelectorAll(".MuiRadio-root");
+
   const handleChange = (event) => {
     let value = event.target.value;
     setValue(value);
     propsChooseTip(value);
+  };
+
+  const onChangeCustomTip = (event) => {
+    let value = event.target.value;
+    propsTipPercentage(value);
+    getAllRadioButton.forEach((element) => {
+      element.classList.remove("Mui-checked");
+    });
   };
 
   const percentageTip = ["5", "10", "15", "25", "50"];
@@ -69,8 +78,8 @@ const BillComputation = ({
               );
             })}
             <TextField
-              onChange={propsTipPercentage}
-              id="bill-amount"
+              onChange={onChangeCustomTip}
+              id="custom-tip"
               type="number"
               placeholder="CUSTOM"
               fullWidth

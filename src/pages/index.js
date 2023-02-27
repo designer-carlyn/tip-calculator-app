@@ -25,10 +25,10 @@ const IndexPage = () => {
 
   const onClickPropsChooseTip = (value) => {
     setTipPercentage(value / 100);
+    document.getElementById("custom-tip").value = "";
   };
 
-  const onChangeTipPercentage = (event) => {
-    const value = event.target.value;
+  const onChangeTipPercentage = (value) => {
     setTipPercentage(value / 100);
   };
 
