@@ -1,49 +1,48 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby Minimal Starter
-</h1>
+# Frontend Mentor - Notifications page solution
 
-## 🚀 Quick start
+## Table of contents
 
-1.  **Create a Gatsby site.**
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+- [Author](#author)
 
-    Use the Gatsby CLI to create a new site, specifying the minimal starter.
+**Note: Delete this note and update the table of contents based on what sections you keep.**
 
-    ```shell
-    # create a new Gatsby site using the minimal starter
-    npm init gatsby
-    ```
+## Overview
 
-2.  **Start developing.**
+### The challenge
 
-    Navigate into your new site’s directory and start it up.
+Users should be able to:
 
-    ```shell
-    cd my-gatsby-site/
-    npm run develop
-    ```
+- Distinguish between "unread" and "read" notifications
+- Select "Mark all as read" to toggle the visual state of the unread notifications and set the number of unread messages to zero
+- View the optimal layout for the interface depending on their device's screen size
+- See hover and focus states for all interactive elements on the page
 
-3.  **Open the code and start customizing!**
+### Screenshot
 
-    Your site is now running at http://localhost:8000!
+![](./screenshot.jpg)
 
-    Edit `src/pages/index.js` to see your site update in real-time!
+### Links
 
-4.  **Learn more**
+- Solution URL: [Solution URL](https://www.frontendmentor.io/solutions/notification-page-with-htmlcssreactjs-k9zzV0Bw0-)
+- Live Site URL: [Live site URL](https://cs-notification-page-solution.netlify.app/)
 
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-    - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-    - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+### Built with
 
-## 🚀 Quick start (Netlify)
+- Semantic HTML5 markup
+- Flexbox
+- [MUI](https://mui.com/) - React Component library
+- [Sass](https://sass-lang.com/) - CSS Preprocessor
+- [React](https://reactjs.org/) - JS library
+- [Gatsby.js](https://www.gatsbyjs.com/) - React framework
 
-Deploy this starter with one click on [Netlify](https://app.netlify.com/signup):
+## Author
 
-[<img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" />](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-minimal)
+- Website - [Creative Portfolio](https://designer-carlyn.github.io/my-porfolio/)
+- Frontend Mentor - [Carlo](https://www.frontendmentor.io/profile/designer-carlyn)
+- Linkedin - [Carlo Arlyn Segovia](linkedin.com/in/carlo-arlyn-segovia-a25b33158)
