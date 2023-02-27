@@ -44,6 +44,7 @@ const BillComputation = ({
         <div className="item-label">Bill</div>
         <TextField
           onChange={totalBill}
+          id="total-bill"
           type="number"
           fullWidth
           placeholder="0.00"
@@ -95,6 +96,7 @@ const BillComputation = ({
         <div className="item-label">Number of People</div>
         <TextField
           onChange={numberOfPeople}
+          id="number-people"
           type="number"
           fullWidth
           placeholder="0"

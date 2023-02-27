@@ -17,10 +17,14 @@ const IndexPage = () => {
   const [numberOfPeople, setNumberOfPeople] = useState(0);
   const [tipAmount, setTipAmount] = useState("0.00");
   const [total, setTotal] = useState(0);
+  const [isDisabled, setIsDisabled] = useState(true);
+
+  const getAllRadioButton = document.querySelectorAll(".MuiRadio-root");
 
   const onChangeTotalBill = (event) => {
     const value = event.target.value;
     setTotalBill(value);
+    setIsDisabled(false);
   };
 
   const onClickPropsChooseTip = (value) => {
@@ -30,6 +34,19 @@ const IndexPage = () => {
 
   const onChangeTipPercentage = (value) => {
     setTipPercentage(value / 100);
+  };
+
+  const onClickResetComputation = () => {
+    setTotalBill(0);
+    document.getElementById("total-bill").value = "";
+    setTipPercentage("");
+    document.getElementById("custom-tip").value = "";
+    setNumberOfPeople(0);
+    document.getElementById("number-people").value = "";
+    getAllRadioButton.forEach((element) => {
+      element.classList.remove("Mui-checked");
+    });
+    setIsDisabled(true);
   };
 
   function onChangeNumberOfPeople(event) {
@@ -48,7 +65,7 @@ const IndexPage = () => {
 
     const getTotalBillPerPerson = totalBill / numberOfPeople + +tipAmount;
     setTotal(getTotalBillPerPerson.toFixed(2));
-  }, [totalBill, tipAmount, tipPercentage, numberOfPeople]);
+  }, [totalBill, tipAmount, tipPercentage, numberOfPeople, isDisabled]);
 
   return (
     <main className="tip-calculator">
@@ -73,6 +90,8 @@ const IndexPage = () => {
                 <BillResult
                   tipAmountPerson={tipAmount}
                   totalBillPerPerson={total}
+                  tipResetDisabled={isDisabled}
+                  resetComputation={onClickResetComputation}
                 ></BillResult>
               </Grid>
             </Grid>

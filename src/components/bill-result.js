@@ -3,7 +3,12 @@ import React from "react";
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 import { Button } from "@mui/material";
 
-const BillResult = ({ tipAmountPerson, totalBillPerPerson }) => {
+const BillResult = ({
+  tipAmountPerson,
+  totalBillPerPerson,
+  tipResetDisabled,
+  resetComputation,
+}) => {
   return (
     <div className="tip-calculator__result">
       <div className="tip-calculator__result-tip">
@@ -28,7 +33,13 @@ const BillResult = ({ tipAmountPerson, totalBillPerPerson }) => {
           </div>
         </div>
         <div className="tip-reset">
-          <Button variant="contained" disableElevation fullWidth>
+          <Button
+            variant="contained"
+            disableElevation
+            fullWidth
+            disabled={tipResetDisabled}
+            onClick={resetComputation}
+          >
             Reset
           </Button>
         </div>
