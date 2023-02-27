@@ -1,6 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 
-import { TextField, InputAdornment, Button } from "@mui/material";
+import {
+  TextField,
+  InputAdornment,
+  // Button,
+  RadioGroup,
+  Radio,
+  FormControlLabel,
+} from "@mui/material";
 
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 import PersonIcon from "@mui/icons-material/Person";
@@ -11,11 +18,15 @@ const BillComputation = ({
   propsTipPercentage,
   propsChooseTip,
 }) => {
-  const percentageTip = ["5", "10", "15", "25", "50"];
+  const [value, setValue] = useState("");
 
-  const chooseTip = (event, index, value) => {
+  const handleChange = (event) => {
+    let value = event.target.value;
+    setValue(value);
     propsChooseTip(value);
   };
+
+  const percentageTip = ["5", "10", "15", "25", "50"];
 
   return (
     <div className="tip-calculator__computation">
@@ -42,27 +53,30 @@ const BillComputation = ({
       <div className="tip-calculator__computation-item tip-calculator__computation--tip">
         <div className="item-label">Select Tip %</div>
         <div className="item-tip-button">
-          {percentageTip.map((tip, index) => {
-            return (
-              <Button
-                variant="contained"
-                disableElevation
-                key={index}
-                id={index}
-                onClick={(event) => chooseTip(event, index, tip)}
-              >
-                {tip}%
-              </Button>
-            );
-          })}
-          <TextField
-            onChange={propsTipPercentage}
-            id="bill-amount"
-            type="number"
-            placeholder="CUSTOM"
-            fullWidth
-            InputProps={{ inputProps: { min: 0 } }}
-          />
+          <RadioGroup
+            value={value}
+            onChange={handleChange}
+            name="radio-buttons-group"
+          >
+            {percentageTip.map((tip, index) => {
+              return (
+                <FormControlLabel
+                  key={index}
+                  value={tip}
+                  control={<Radio disableRipple />}
+                  label={tip + "%"}
+                />
+              );
+            })}
+            <TextField
+              onChange={propsTipPercentage}
+              id="bill-amount"
+              type="number"
+              placeholder="CUSTOM"
+              fullWidth
+              InputProps={{ inputProps: { min: 0 } }}
+            />
+          </RadioGroup>
         </div>
       </div>
       {/* End Select Tip */}
