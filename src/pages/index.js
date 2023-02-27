@@ -18,8 +18,7 @@ const IndexPage = () => {
   const [tipAmount, setTipAmount] = useState("0.00");
   const [total, setTotal] = useState(0);
   const [isDisabled, setIsDisabled] = useState(true);
-
-  const getAllRadioButton = document.querySelectorAll(".MuiRadio-root");
+  const [querGetAllRadio, setQuerGetAllRadio] = useState(null);
 
   const onChangeTotalBill = (event) => {
     const value = event.target.value;
@@ -43,7 +42,7 @@ const IndexPage = () => {
     document.getElementById("custom-tip").value = "";
     setNumberOfPeople(0);
     document.getElementById("number-people").value = "";
-    getAllRadioButton.forEach((element) => {
+    querGetAllRadio.forEach((element) => {
       element.classList.remove("Mui-checked");
     });
     setIsDisabled(true);
@@ -65,6 +64,9 @@ const IndexPage = () => {
 
     const getTotalBillPerPerson = totalBill / numberOfPeople + +tipAmount;
     setTotal(getTotalBillPerPerson.toFixed(2));
+
+    const getAllRadioButton = document.querySelectorAll(".MuiRadio-root");
+    setQuerGetAllRadio(getAllRadioButton);
   }, [totalBill, tipAmount, tipPercentage, numberOfPeople, isDisabled]);
 
   return (

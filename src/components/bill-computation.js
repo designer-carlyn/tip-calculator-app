@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import {
   TextField,
@@ -18,8 +18,7 @@ const BillComputation = ({
   propsChooseTip,
 }) => {
   const [value, setValue] = useState("");
-
-  const getAllRadioButton = document.querySelectorAll(".MuiRadio-root");
+  const [querGetAllRadio, setQuerGetAllRadio] = useState(null);
 
   const handleChange = (event) => {
     let value = event.target.value;
@@ -30,12 +29,18 @@ const BillComputation = ({
   const onChangeCustomTip = (event) => {
     let value = event.target.value;
     propsTipPercentage(value);
-    getAllRadioButton.forEach((element) => {
+    setValue("");
+    querGetAllRadio.forEach((element) => {
       element.classList.remove("Mui-checked");
     });
   };
 
   const percentageTip = ["5", "10", "15", "25", "50"];
+
+  useEffect(() => {
+    const getAllRadioButton = document.querySelectorAll(".MuiRadio-root");
+    setQuerGetAllRadio(getAllRadioButton);
+  }, []);
 
   return (
     <div className="tip-calculator__computation">
