@@ -58,55 +58,51 @@
           }
         }
       }
+      
+      .MuiFormGroup-root {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        grid-gap: 10px;
 
-      .item-tip-button {
-        
+        .MuiFormControlLabel-root {
+          color: var(--c-white);
+          font-weight: 700;
+          margin-left: 0;
+          margin-right: 0;
+          justify-content: center;
+          border-radius: 5px;
+          min-height: 50px;
+          font-weight: 700;
+          position: relative;
+          z-index: 0;
+          overflow: hidden;
+        }
 
-        .MuiFormGroup-root {
-          display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-          grid-gap: 10px;
+        .MuiButtonBase-root {
+          background: var(--v-dark-cyan);
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          border-radius: 0;
+          z-index: -1;
 
-          .MuiFormControlLabel-root {
-            color: var(--c-white);
-            font-weight: 700;
-            margin-left: 0;
-            margin-right: 0;
-            justify-content: center;
-            border-radius: 5px;
-            min-height: 50px;
-            font-weight: 700;
-            position: relative;
-            z-index: 0;
-            overflow: hidden;
-          }
-
-          .MuiButtonBase-root {
-            background: var(--v-dark-cyan);
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            border-radius: 0;
-            z-index: -1;
-
-            &.Mui-checked {
-              background: var(--c-cyan);
-            }
-          }
-
-          .MuiTypography-root {
-            font-weight: 700;
-            font-size: 20px;
-          }
-
-          .MuiSvgIcon-root {
-            display: none;
+          &.Mui-checked {
+            background: var(--c-cyan);
           }
         }
 
-        .MuiInputBase-input {
-          text-align: center;
+        .MuiTypography-root {
+          font-weight: 700;
+          font-size: 20px;
         }
+
+        .MuiSvgIcon-root {
+          display: none;
+        }
+      }
+
+      .MuiInputBase-input {
+        text-align: center;
       }
 
       &.tip-calculator__computation--people {
