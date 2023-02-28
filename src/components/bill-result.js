@@ -14,22 +14,22 @@ const BillResult = ({
       <div className="tip-calculator__result-tip">
         <div className="tip-item">
           <div className="tip-title">
-            <h4>Tip Amount</h4>
+            <h1>Tip Amount</h1>
             <small>/ person</small>
           </div>
           <div className="tip-amount">
             <AttachMoneyIcon></AttachMoneyIcon>
-            <h1>{tipAmountPerson}</h1>
+            <h4>{tipAmountPerson}</h4>
           </div>
         </div>
         <div className="tip-item">
           <div className="tip-title">
-            <h4>Total</h4>
+            <h1>Total</h1>
             <small>/ person</small>
           </div>
           <div className="tip-amount">
             <AttachMoneyIcon></AttachMoneyIcon>
-            <h1>{totalBillPerPerson}</h1>
+            <h4>{totalBillPerPerson}</h4>
           </div>
         </div>
         <div className="tip-reset">
