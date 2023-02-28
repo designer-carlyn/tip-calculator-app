@@ -19,7 +19,7 @@ const BillResult = ({
           </div>
           <div className="tip-amount">
             <AttachMoneyIcon></AttachMoneyIcon>
-            <h4>{tipAmountPerson}</h4>
+            <h2>{tipAmountPerson}</h2>
           </div>
         </div>
         <div className="tip-item">
@@ -29,7 +29,7 @@ const BillResult = ({
           </div>
           <div className="tip-amount">
             <AttachMoneyIcon></AttachMoneyIcon>
-            <h4>{totalBillPerPerson}</h4>
+            <h2>{totalBillPerPerson}</h2>
           </div>
         </div>
         <div className="tip-reset">
