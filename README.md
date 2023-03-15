@@ -26,7 +26,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Solution URL](https://www.frontendmentor.io/solutions/notification-page-with-htmlcssreactjs-k9zzV0Bw0-)
+- Solution URL: [Solution URL](https://www.frontendmentor.io/solutions/tip-calculator-app-with-reactjs-and-mui-library-8SPilfiNGF)
 - Live Site URL: [Live site URL](https://cs-tip-calculator.netlify.app/)
 
 ### Built with
