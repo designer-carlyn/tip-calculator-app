@@ -1,4 +1,4 @@
-# Frontend Mentor - Notifications page solution
+# Frontend Mentor - Tip Calculator App
 
 ## Table of contents
 
