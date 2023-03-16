@@ -114,7 +114,7 @@ export const Head = () => (
     <meta property="og:type" content="website" />
     <meta
       property="og:description"
-      content="This tip calculator will help you to calculate the total bills per person and the tip you want to give to the waiter."
+      content="This tip calculator will help you to calculate the total bills per person and the tip you want to give."
     />
     <meta
       property="og:image"
