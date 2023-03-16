@@ -107,4 +107,18 @@ const IndexPage = () => {
 
 export default IndexPage;
 
-export const Head = () => <title>Tip Calculator App</title>;
+export const Head = () => (
+  <>
+    <title>Tip Calculator App</title>
+    <meta property="og:title" content="Tip Calculator App" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:description"
+      content="This tip calculator will help you to calculate the total bills per person and the tip you want to give to the waiter."
+    />
+    <meta
+      property="og:image"
+      content="https://ik.imagekit.io/csdesigner/my_portfolio/recent_works/tip-calculator-app_TwTR5hjoh2.webp?updatedAt=1678074114702"
+    />
+  </>
+);
